@@ -1,15 +1,16 @@
 server:
-  port: 80
+  port: 8083
   
 spring:
   application:
     name: micro-product
   data:
     mongodb:
-      #uri: mongodb://localhost:12500/product
-      uri: mongodb://bootcamb-db:uMamqpjJ0iG4gPsLyJXEAaqfW8685r2SEWaIYmBvtH9aYigkhka31qHcEazga17iyFoWmkEHbZNQRpQAUdTnbg==@bootcamb-db.mongo.cosmos.azure.com:10255/product?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@bootcamb-db@
+      uri: mongodb://localhost:12500/customer
+      #uri: mongodb://bootcamb-db:uMamqpjJ0iG4gPsLyJXEAaqfW8685r2SEWaIYmBvtH9aYigkhka31qHcEazga17iyFoWmkEHbZNQRpQAUdTnbg==@bootcamb-db.mongo.cosmos.azure.com:10255/product?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@bootcamb-db@
   kafka:
-    bootstrap-servers: 52.160.125.8:9092
+    #bootstrap-servers: 52.160.125.8:9092
+     bootstrap-servers: localhost:9092
 
 eureka:
   client:
@@ -19,4 +20,4 @@ eureka:
     fetch-registry: true
   instance:
     prefer-ip-address: false
-    hostname: micro-product.azurewebsites.net
+    hostname: 192.168.1.136
