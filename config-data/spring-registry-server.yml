@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 8888
 management:
   server:
     port: ${server.port}
@@ -7,7 +7,7 @@ eureka:
   server:
     enableSelfPreservation: false
   instance:
-    hostname: servidor-eureka.azurewebsites.net
+    hostname: localhost
     secure-port-enabled: true
     nonSecurePort: 80
     securePort: 443
