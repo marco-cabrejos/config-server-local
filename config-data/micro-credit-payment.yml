@@ -1,0 +1,26 @@
+server:
+  port: 8098
+  
+spring:
+  application:
+    name: micro-credit-payment
+  data:
+    mongodb:
+      uri: mongodb://localhost:12500/payment
+  kafka:
+    bootstrap-servers: localhost:29092
+      
+kafka:
+  server:
+    hostname: localhost
+    port: 29092
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8099/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    hostname: localhost

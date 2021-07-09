@@ -1,0 +1,22 @@
+server:
+  port: 80
+  
+spring:
+  application:
+    name: micro-purchase
+  data:
+    mongodb:
+      #uri: mongodb://localhost:12500/purchase
+      uri: mongodb://bootcamb-db:uMamqpjJ0iG4gPsLyJXEAaqfW8685r2SEWaIYmBvtH9aYigkhka31qHcEazga17iyFoWmkEHbZNQRpQAUdTnbg==@bootcamb-db.mongo.cosmos.azure.com:10255/purchase?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@bootcamb-db@
+  kafka:
+    bootstrap-servers: 52.160.125.8:9092
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://servidor-eureka.azurewebsites.net/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: false
+    hostname: micro-purchase.azurewebsites.net

@@ -1,0 +1,57 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://servidor-eureka.azurewebsites.net/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: false
+    hostname: servidor-gateway.azurewebsites.net
+
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: customer-service
+#        uri: https://micro-customer.azurewebsites.net/customer
+        uri: lb://micro-customer
+        predicates:
+        - Path=/customer/**
+      - id: product-service
+        uri: lb://micro-product
+        predicates:
+        - Path=/product/**
+      - id: purchase-service
+        uri: lb://micro-purchase
+        predicates:
+        - Path=/purchase/**
+      - id: transaction-service
+        uri: lb://micro-transaction
+        predicates:
+        - Path=/transaction/**
+      - id: account-service
+        uri: lb://micro-account
+        predicates:
+        - Path=/account/**
+      - id: withdrawal-service
+        uri: lb://micro-withdrawal
+        predicates:
+        - Path=/withdrawal/**
+      - id: micro-credit-consumer
+        uri: lb://micro-credit-consumer
+        predicates:
+        - Path=/credit/**
+      - id: micro-credit-payment
+        uri: lb://micro-credit-payment
+        predicates:
+        - Path=/payment/**
+        
+        
+        

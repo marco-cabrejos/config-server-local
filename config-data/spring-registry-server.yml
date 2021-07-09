@@ -1,0 +1,20 @@
+server:
+  port: 80
+management:
+  server:
+    port: ${server.port}
+eureka:
+  server:
+    enableSelfPreservation: false
+  instance:
+    hostname: servidor-eureka.azurewebsites.net
+    secure-port-enabled: true
+    nonSecurePort: 80
+    securePort: 443
+    instanceId: ${eureka.instance.hostname}:${spring.application.name}:443
+    statusPageUrl: https://${eureka.hostname}:443/actuator/info
+    healthCheckUrl: https://${eureka.hostname}:443/actuator/health
+    secureHealthCheckUrl: https://${eureka.hostname}:443/actuator/health
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
