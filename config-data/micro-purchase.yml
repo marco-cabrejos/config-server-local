@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: 8083
   
 spring:
   application:
@@ -26,36 +26,5 @@ eureka:
     prefer-ip-address: false
     hostname: 192.168.1.136
 
-resilience4j:
-  circuitbreaker:
-    configs:
-      default:
-        registerHealthIndicator: true
-        slidingWindowSize: 10
-        minimumNumberOfCalls: 5
-        permittedNumberOfCallsInHalfOpenState: 3
-        automaticTransitionFromOpenToHalfOpenEnabled: true
-        waitDurationInOpenState: 5s
-        failureRateThreshold: 50
-        eventConsumerBufferSize: 10
-    instances:
-      albumService:
-        baseConfig: default
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: always
-  metrics:
-    distribution:
-      percentiles-histogram:
-        http:
-          server:
-            request: true
-        resielence4j:
-          circuitbreaker:
-            calls: true
+gateway:
+  baseUrl: http://localhost:8080
