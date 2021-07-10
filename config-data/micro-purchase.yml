@@ -11,12 +11,11 @@ spring:
   kafka:
     #bootstrap-servers: 52.160.125.8:9092
      bootstrap-servers: localhost:9092
+
 logging:
   level:
     root: info
-logging:
-  pattern:
-    console: \%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n
+
 eureka:
   client:
     serviceUrl:
