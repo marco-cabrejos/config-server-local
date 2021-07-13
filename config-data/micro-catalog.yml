@@ -1,0 +1,23 @@
+server:
+  port: 8070
+  
+spring:
+  application:
+    name: micro-account
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    timeout: 60000
+    password: macuto104
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: false
+    #hostname: 192.168.1.136
+    hostname: 192.168.1.11
