@@ -3,7 +3,7 @@ server:
   
 spring:
   application:
-    name: micro-account
+    name: micro-catalog
   redis:
     database: 0
     host: localhost
