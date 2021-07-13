@@ -11,7 +11,11 @@ spring:
   kafka:
     #bootstrap-servers: 52.160.125.8:9092
      bootstrap-servers: localhost:9092
-
+     
+logging:
+  level:
+    root: info
+    
 eureka:
   client:
     serviceUrl:

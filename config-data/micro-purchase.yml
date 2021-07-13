@@ -24,7 +24,5 @@ eureka:
     fetch-registry: true
   instance:
     prefer-ip-address: false
-    hostname: 192.168.1.136
-
-gateway:
-  baseUrl: http://localhost:8080
+    #hostname: 192.168.1.136
+    hostname: 192.168.1.11
