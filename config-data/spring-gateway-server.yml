@@ -40,6 +40,10 @@ spring:
         uri: lb://micro-account
         predicates:
         - Path=/account/**
+      - id: deposit-service
+        uri: lb://micro-deposit
+        predicates:
+        - Path=/deposit/**
       - id: withdrawal-service
         uri: lb://micro-withdrawal
         predicates:
