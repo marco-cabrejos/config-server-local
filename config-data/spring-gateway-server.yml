@@ -56,6 +56,10 @@ spring:
         uri: lb://micro-catalog
         predicates:
         - Path=/catalog/**
+      - id: micro-debit-card
+        uri: lb://micro-debit-card
+        predicates:
+        - Path=/debitcard/**
         
         
         
