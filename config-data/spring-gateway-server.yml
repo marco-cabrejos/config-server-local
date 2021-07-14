@@ -60,6 +60,13 @@ spring:
         uri: lb://micro-debit-card
         predicates:
         - Path=/debitcard/**
-        
+      - id: micro-yanki
+        uri: lb://micro-yanki
+        predicates:
+        - Path=/yanki/**
+      - id: micro-bootcoin
+        uri: lb://micro-bootcoin
+        predicates:
+        - Path=/bootcoin/**
         
         
