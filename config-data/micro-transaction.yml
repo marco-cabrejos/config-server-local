@@ -1,22 +1,31 @@
 server:
-  port: 80
+  port: 8086
   
 spring:
   application:
     name: micro-transaction
   data:
     mongodb:
-      #uri: mongodb://localhost:12500/transaction
-      uri: mongodb://bootcamb-db:uMamqpjJ0iG4gPsLyJXEAaqfW8685r2SEWaIYmBvtH9aYigkhka31qHcEazga17iyFoWmkEHbZNQRpQAUdTnbg==@bootcamb-db.mongo.cosmos.azure.com:10255/transaction?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@bootcamb-db@
+      uri: mongodb://localhost:12500/transaction
+      #uri: mongodb://bootcamb-db:uMamqpjJ0iG4gPsLyJXEAaqfW8685r2SEWaIYmBvtH9aYigkhka31qHcEazga17iyFoWmkEHbZNQRpQAUdTnbg==@bootcamb-db.mongo.cosmos.azure.com:10255/transaction?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@bootcamb-db@
   kafka:
-    bootstrap-servers: 52.160.125.8:9092
+    #bootstrap-servers: 52.160.125.8:9092
+    bootstrap-servers: localhost:9092
+
+logging:
+  level:
+    root: info
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://servidor-eureka.azurewebsites.net/eureka/
+      defaultZone: http://localhost:8888/eureka/
     register-with-eureka: true
     fetch-registry: true
   instance:
     prefer-ip-address: false
-    hostname: micro-transaction.azurewebsites.net
+    #hostname: 192.168.1.136
+    hostname: 192.168.1.11
+
+gateway:
+  baseUrl: http://localhost:8080
